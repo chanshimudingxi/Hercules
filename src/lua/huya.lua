@@ -182,6 +182,7 @@ end
 InitAnim()
 --]]
 
+-- 启动任务
 function start(table)
     LOG("lua start")
     update_ms()
@@ -542,7 +543,7 @@ function checkOutput(output)
     end
 end
 
-
+-- 更新任务
 function update(table)
 
     if table.type == 'audioMixerDump' then
@@ -560,6 +561,7 @@ function update(table)
 
 end
 
+-- 停止任务
 function stop()
 
     for key,value in pairs(_G.onPush) do
@@ -611,6 +613,7 @@ function http_url_update()
     _G.onDown = newOnDown
 end
 
+-- json任务处理函数
 function process()
     update_ms()
 

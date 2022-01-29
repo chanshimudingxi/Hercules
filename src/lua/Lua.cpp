@@ -390,6 +390,7 @@ namespace hercules
     {
         m_script = script;
 
+        //通过luabind库函数把c++函数绑定到lua空间
         bindHelpFunction();
         bindCommon();
         bindQueue();

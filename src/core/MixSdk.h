@@ -115,7 +115,7 @@ namespace hercules
     private:
         std::map<std::string, MixTask *> m_tasks;
         std::mutex m_taskMutex;
-        std::string m_fontFile;
+        std::string m_fontFile; //字体文件
     };
 
 } // namespace hercules

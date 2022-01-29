@@ -62,10 +62,13 @@ namespace hercules
         void initScript(const std::string &script);
         void reloadScript();
 
+        //开始任务，流程细节由lua中描述
         int start(const std::string &jobKey, const std::string &name, const std::string &sJson);
+        //停止任务，流程细节由lua中描述
         int stop();
+        //更新任务，流程细节由lua中描述
         int update(const std::string &jobKey, const std::string &name, const std::string &sJson);
-
+        //任务处理，流程细节由lua中描述
         int process();
 
         int gc(int what, int data) { return lua_gc(L, what, data); }
@@ -78,6 +81,7 @@ namespace hercules
             return m_script;
         }
 
+        //调用lua状态机空间中的函数
         template <class... T>
         int doFunc(const std::string &sFunc, T... args)
         {
@@ -117,7 +121,7 @@ namespace hercules
         std::string m_script;
         time_t m_lastModTime;
 
-        std::string m_jobKey;
+        std::string m_jobKey;   //任务id
     };
 
 } // namespace hercules

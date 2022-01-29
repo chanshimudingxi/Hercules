@@ -217,7 +217,9 @@ namespace hercules
 
         try
         {
+            //新建一个lua状态机
             lua = new Lua;
+            //初始化lua状态机，一方面是从lua文件中载入，一方面是通过luabind载入c++的api
             lua->initScript(m_script);
 
             string sJson;
